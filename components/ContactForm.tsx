@@ -80,8 +80,8 @@ export default function ContactForm() {
           <span className="text-sm text-green-600">¡Mensaje enviado!</span>
         )}
         
-        {/* LÍNEA CORREGIDA */}
-        {state.errors && state.errors.length > 0 && !state.succeeded && (
+        {/* LÍNEA CORREGIDA FINAL */}
+        {state.errors && !state.succeeded && (
           <span className="text-sm text-rose-600">
             Error al enviar. Intenta otra vez.
           </span>
