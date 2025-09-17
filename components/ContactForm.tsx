@@ -6,14 +6,7 @@ import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactForm() {
-  // Usamos el hook de Formspree con tu identificador único
   const [state, handleSubmit] = useForm("xjkeqopg");
-
-  // Si el formulario se envió con éxito, podemos mostrar un mensaje
-  // o incluso todo el formulario de nuevo. Para mantenerlo como lo tenías,
-  // el estado "succeeded" mostrará el mensaje de éxito más abajo.
-  // Si quisieras ocultar el formulario después de enviar, aquí pondrías:
-  // if (state.succeeded) { return <p>¡Gracias por tu mensaje!</p>; }
 
   return (
     <form onSubmit={handleSubmit} className="mt-4 space-y-4">
@@ -24,7 +17,7 @@ export default function ContactForm() {
         <input
           id="name"
           type="text"
-          name="name" // El atributo 'name' es importante para que Formspree lo reconozca
+          name="name"
           className="mt-1 w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-fuchsia-500 focus:ring-fuchsia-500"
           required
         />
@@ -43,7 +36,7 @@ export default function ContactForm() {
         <input
           id="email"
           type="email"
-          name="email" // Atributo 'name'
+          name="email"
           className="mt-1 w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-fuchsia-500 focus:ring-fuchsia-500"
           required
         />
@@ -61,7 +54,7 @@ export default function ContactForm() {
         </label>
         <textarea
           id="message"
-          name="message" // Atributo 'name'
+          name="message"
           rows={4}
           className="mt-1 w-full rounded-lg border border-neutral-300 px-3 py-2 focus:border-fuchsia-500 focus:ring-fuchsia-500"
           required
@@ -77,18 +70,18 @@ export default function ContactForm() {
       <div className="flex items-center gap-3">
         <button
           type="submit"
-          disabled={state.submitting} // Usamos state.submitting de Formspree
+          disabled={state.submitting}
           className="inline-flex items-center rounded-lg bg-neutral-900 text-white px-4 py-2 text-sm hover:bg-neutral-800 disabled:bg-neutral-400"
         >
           {state.submitting ? "Enviando…" : "Enviar mensaje"}
         </button>
 
-        {/* El mensaje de éxito y error ahora dependen del estado de Formspree */}
         {state.succeeded && (
           <span className="text-sm text-green-600">¡Mensaje enviado!</span>
         )}
-        {/* Mostramos un error genérico si hay algún problema */}
-        {state.errors.length > 0 && !state.succeeded && (
+        
+        {/* LÍNEA CORREGIDA */}
+        {state.errors && state.errors.length > 0 && !state.succeeded && (
           <span className="text-sm text-rose-600">
             Error al enviar. Intenta otra vez.
           </span>
