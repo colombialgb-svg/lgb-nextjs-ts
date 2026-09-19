@@ -5,6 +5,11 @@ export const metadata = {
   title: "LGB Colombia",
   description:
     "Defendemos los derechos de lesbianas, gays y bisexuales en Colombia.",
+  icons: {
+    icon: "/logo_v6_notitle.png",
+    shortcut: "/logo_v6_notitle.png",
+    apple: "/logo_v6_notitle.png",
+  },
 };
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
