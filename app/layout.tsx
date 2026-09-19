@@ -6,9 +6,9 @@ export const metadata = {
   description:
     "Defendemos los derechos de lesbianas, gays y bisexuales en Colombia.",
   icons: {
-    icon: "/logo_v6_notitle.png",
-    shortcut: "/logo_v6_notitle.png",
-    apple: "/logo_v6_notitle.png",
+    icon: "/logo_v7_notitle.png",
+    shortcut: "/logo_v7_notitle.png",
+    apple: "/logo_v7_notitle.png",
   },
 };
 
